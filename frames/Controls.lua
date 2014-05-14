@@ -21,6 +21,7 @@ function FTC.Frames:Controls()
 		player:SetDrawLayer(2)
 		player:SetHandler( "OnMouseUp", function( self ) FTC.Menu:SaveAnchor( self ) end)
 		player.plate		= FTC.UI.Control( "FTC_PlayerFrame_Plate" , player , {player:GetWidth() ,25} , {BOTTOM,TOP,0,3,parent} , false )	
+
 		--player.name 		= FTC.UI.Label( "FTC_PlayerFrame_Name" , player.plate , {player:GetWidth() ,25} , {BOTTOM,BOTTOM,4,-2} , FTC.Fonts.meta(16) , nil , {0,1} , "Player Name (Level)" , false )	
 		--player.class		= FTC.UI.Texture( "FTC_PlayerFrame_Class" , player.plate , {30,30} , {BOTTOMRIGHT,BOTTOMRIGHT,0,0} , nil , false )
 		--player.class:SetTexture( "/esoui/art/contacts/social_classicon_" .. FTC.Player.class .. ".dds" )
@@ -80,8 +81,9 @@ function FTC.Frames:Controls()
 		thp.bar				= FTC.UI.Statusbar( "FTC_TargetFrame_HealthBar" , thp , { thp:GetWidth() - 2 , thp:GetHeight() - 2 } , {TOPLEFT,TOPLEFT,1,1} , {0.6,0,0,1} , false )	
 		thp.bar:SetTexture('FoundryTacticalCombat/lib/textures/grainy.dds')
 		thp.current			= FTC.UI.Label( "FTC_TargetFrame_HealthCurrent" , thp , { thp:GetWidth() - 16 , thp:GetHeight() } , {CENTER,CENTER,0,0} , "ZoFontWindowSubtitle" , nil , {LEFT,TOP} , '1.0k/100k (1.0%)' , false )		
-		target.name 		= FTC.UI.Label( "FTC_TargetFrame_Name" , thp , { thp:GetWidth() - 16 , thp:GetHeight() } , {CENTER,CENTER,0,0} , FTC.Fonts.meta(16) , nil , {0,1} , 'Target Name (Level)' , false )		
-		target.class		= FTC.UI.Texture( "FTC_TargetFrame_Class" , target.name , {30,30} , {CENTER,TOPRIGHT,0,2} , nil , true )
+		target.class		= FTC.UI.Texture( "FTC_TargetFrame_Class" , thp , {30,30} , {LEFT,LEFT,2,0} , nil , true )
+		target.name 		= FTC.UI.Label( "FTC_TargetFrame_Name" , target.class , { thp:GetWidth() - 16 , thp:GetHeight() } , {LEFT,RIGHT,2,0} , FTC.Fonts.meta(16) , nil , {0,1} , 'Target Name (Level)' , false )		
+
 
 		--thp.pct				= FTC.UI.Label( "FTC_TargetFrame_HealthPct" , thp , { thp:GetWidth() - 16 , thp:GetHeight() } , {CENTER,CENTER,0,0} , "ZoFontWindowSubtitle" , nil , {0,1} , 'Pct%' , false )		
 		target.health		= thp

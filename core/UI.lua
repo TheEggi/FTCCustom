@@ -215,3 +215,14 @@ function FTC.UI.Button( name , parent , dims , anchor , state , font , align , n
 	.__END
 	return button
 end
+
+function FTC.UI.Line(name, parent, dims, anchor, hidden)
+	local line = FTC.Chain( WINDOW_MANAGER:CreateControl( name , parent , CT_LINE ) )
+		:SetDimensions( dims[1] , dims[2] )
+		:SetAnchor( anchor[1] , #anchor == 5 and anchor[5] or parent , anchor[2] , anchor[3] , anchor[4] )
+		:SetColor(255, 255, 255, 255)
+		:SetThickness(10)
+		:SetHidden( hidden )
+	.__END
+	return line
+end
