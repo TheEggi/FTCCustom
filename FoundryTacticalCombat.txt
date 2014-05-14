@@ -1,0 +1,43 @@
+## Title: Foundry Tactical Combat
+## APIVersion: 100003
+## SavedVariables: FTC_VARS
+
+FoundryTacticalCombat.lua
+
+lib/LibStub.lua
+lib/LibAddonMenu-1.0.lua
+
+core/Functions.lua
+core/UI.lua
+core/Events.lua
+
+buffs/Functions.lua
+buffs/Effects.lua
+buffs/Controls.lua
+
+character/Functions.lua
+
+damage/Functions.lua
+damage/Controls.lua
+
+sct/Functions.lua
+sct/Alerts.lua
+sct/Controls.lua
+
+frames/Functions.lua
+frames/Controls.lua
+
+menu/Functions.lua
+menu/Controls.lua
+
+lang/Localization.lua
+lang/German.lua
+lang/French.lua
+
+extensions/Sorcerer.lua
+extensions/Nightblade.lua
+extensions/Weapons.lua
+extensions/Guild.lua
+
+FoundryTacticalCombat.xml
+bindings.xml

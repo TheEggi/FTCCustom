@@ -1,0 +1,18 @@
+<!----------------------------------------------------------
+	FOUNDRY TACTICAL COMBAT XML
+  ----------------------------------------------------------
+	* Version 0.27
+	* atropos@tamrielfoundry.com
+	* 4-21-2014
+  -->
+<GuiXml>
+    <Controls>
+        <TopLevelControl name="FoundryTacticalCombat" mouseEnabled="false">
+			<Dimensions x="1920" y="1080" />
+			<Anchor point="CENTER" />
+            <OnUpdate>
+				FTC:Update()
+            </OnUpdate>
+        </TopLevelControl>
+	</Controls>
+</GuiXml>
