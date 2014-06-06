@@ -67,7 +67,7 @@ end
  ]]--
 local function ceil(value, num)
 	local mult = 10^(num or 0)
-	return math.ceil(value * mult)
+	return math.ceil(value * mult) / mult
 end
 
  function FTC.Frames:UpdateAttribute( unitTag , powerType ,  powerValue , powerMax , powerEffectiveMax )
@@ -416,6 +416,10 @@ end
 	
 		-- Populate nameplate
 		local name 		= FTC.Target.name
+		if(string.len(name) >= 10) then
+			name = string.sub(name, 10) .. "."
+		end
+
 		local level 	= FTC.Target.vlevel > 0 and "v" .. FTC.Target.vlevel or FTC.Target.level
 		frame.name:SetText( name .. " (" .. level .. ")" )
 		local isPlayer	= IsUnitPlayer('reticleover')
@@ -432,7 +436,6 @@ end
 		if ( isPlayer ) then
 			title		= GetUnitTitle( 'reticleover' ) == "" and GetAvARankName( GetUnitGender('reticleover') , GetUnitAvARank('reticleover') ) or GetUnitTitle( 'reticleover' )
 		end
-		frame.title:SetText(title)
 		
 		-- Does the target have a shield?
 		local unitAttributeVisual, statType, attributeType, powerType, value, maxValue = GetAllUnitAttributeVisualizerEffectInfo("reticleover")
