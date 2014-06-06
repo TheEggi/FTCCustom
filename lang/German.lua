@@ -309,14 +309,14 @@ FTC.German = {
 	
 	-- Siphoning
 	["Unfriede^m"] 										= "Strife",
-	--[""] 												= "Swallow Soul",
+	["Seelenschlingen^n"] 								= "Swallow Soul",
 	["Lebensflu\195\159^m"] 							= "Funnel Health",	
 	["Qual^f"] 											= "Agony",
 	["verl\195\164ngertes Leiden^n"] 					= "Prolonged Suffering",
 	--[""] 												= "Malefic Wreath",	
 	["Verkr\195\188ppeln^n"] 							= "Cripple",
 	--[""] 												= "Debilitate",
-	--[""] 												= "Crippling Grasp",	
+	["verkr\195\188elnder Griff^m"] 					= "Crippling Grasp",
 	["Kraftentzug^m"] 									= "Drain Power",
 	["Essenzentzug^m"] 									= "Power Extraction",
 	["Essenzsog^m"] 									= "Sap Essence",	
@@ -326,7 +326,7 @@ FTC.German = {
 	["Seelenfetzen^n"] 									= "Soul Shred",
 	["Seelenfessel^n"] 									= "Soul Tether",
 	--[""] 												= "Soul Siphon",
-	
+
 	-- Shadow
 	["Schattenmantel^m"] 								= "Shadow Cloak",
 	["Schattenkleid^n"] 								= "Shadowy Disguise",
@@ -336,7 +336,7 @@ FTC.German = {
 	["verborgene Waffe^f"] 								= "Concealed Weapon",	
 	["Pfad der Dunkelheit^m"] 							= "Path of Darkness",
 	--[""] 												= "Twisting Path",
-	--[""] 												= "Refreshing Path",	
+	["erneuernder Pfad^m"]	 							= "Refreshing Path",
 	["Aspekt des Schreckens^m"] 						= "Aspect of Terror",
 	--[""] 												= "Mass Hysteria",
 	--[""] 												= "Manifestation of Terror",	

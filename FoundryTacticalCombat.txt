@@ -1,5 +1,5 @@
 ## Title: Foundry Tactical Combat
-## APIVersion: 100003
+## APIVersion: 100004
 ## SavedVariables: FTC_VARS
 
 FoundryTacticalCombat.lua

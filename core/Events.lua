@@ -181,17 +181,21 @@ end
 function FTC.OnCombatEvent( eventCode , result , isError , abilityName, abilityGraphic, abilityActionSlotType, sourceName, sourceType, targetName, targetType, hitValue, powerType, damageType, log )
 
 	-- Verify it's a valid result type
-	if ( not FTC.Damage:Filter( result , abilityName , sourceType , sourceName , targetName , hitValue ) ) then return end
+	isValid, result , abilityName , sourceType , sourceName , targetName , hitValue = FTC.Damage:Filter( result , abilityName , sourceType , sourceName , targetName , hitValue )
+	if not isValid then return end
 	
 	-- Determine the context
-	local context 	= ( sourceType == 0 ) and "In" or "Out"
+	local context = ( sourceType == COMBAT_UNIT_TYPE_PLAYER or sourceType == COMBAT_UNIT_TYPE_PLAYER_PET ) and "Out" or ""
+	if ( sourceType == COMBAT_UNIT_TYPE_NONE ) then context = "In"
+	elseif ( sourceType == COMBAT_UNIT_TYPE_GROUP ) then context = "Group" end
 
-	-- Modify the name
+	-- Strip parentheses from name
 	abilityName = string.gsub ( abilityName , ' %(.*%)' , "" )
 	
 	-- Setup a new damage object
 	local damage = {
 		["target"]	= targetName,
+		["source"]	= sourceName,
 		["name"]	= abilityName,
 		["result"]	= result,
 		["dam"]		= hitValue,
@@ -204,7 +208,7 @@ function FTC.OnCombatEvent( eventCode , result , isError , abilityName, abilityG
 	}
 	
 	-- Pass damage to scrolling combat text
-	if ( FTC.init.SCT ) then FTC.SCT:NewSCT( damage , context ) end
+	if ( FTC.init.SCT and context ~= "Group" ) then FTC.SCT:NewSCT( damage , context ) end
 	
 	-- Pass damage to damage meter tracking
 	if ( FTC.init.Damage ) then	FTC.Damage:UpdateMeter( damage , context ) end

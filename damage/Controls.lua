@@ -14,10 +14,12 @@ function FTC.Damage:Controls()
 	local anchor 	= FTC.vars.FTC_MiniMeter
 	local DM 		= FTC.UI.TopLevelWindow( "FTC_MiniMeter" 		, GuiRoot , {210,30} , {anchor[1],anchor[2],anchor[3],anchor[4]} , false )
 	DM:SetHandler( "OnMouseUp", function( self ) FTC.Menu:SaveAnchor( self ) end )
+	DM:SetMouseEnabled( true )
+	DM:SetMovable( true )
 	
 	DM.backdrop 	= FTC.UI.Backdrop( "FTC_MiniMeterBackdrop"		, DM , "inherit" , {CENTER,CENTER,0,0} , { 0,0,0,0.2 } , { 0,0,0,0.1 } , false )
 	
-	DM.dam			= FTC.UI.Control( "FTC_MiniMeter_Damage" 		, DM , {70,30} , {LEFT,LEFT,0,0} , false )
+	DM.dam			= FTC.UI.Control( "FTC_MiniMeter_Damage" 		, DM , {70,30} , {TOPLEFT,TOPLEFT,0,0} , false )
 	DM.dam.label	= FTC.UI.Label( "FTC_MiniMeter_DamageLabel" 	, DM.dam , {46,30} , {LEFT,LEFT,24,0} , FTC.Fonts.meta(14) , nil , {0,1} , "dam" , false )
 	DM.dam.icon		= FTC.UI.Texture( "FTC_MiniMeter_DamageIcon" 	, DM.dam , {20,20} , {LEFT,LEFT,1,0} , nil , false )
 	DM.dam.icon:SetTexture( "/esoui/art/lfg/lfg_dps_up.dds" )
@@ -31,6 +33,8 @@ function FTC.Damage:Controls()
 	DM.inc.label	= FTC.UI.Label( "FTC_MiniMeter_IncLabel" 		, DM.inc , {46,30} , {LEFT,LEFT,24,0} , FTC.Fonts.meta(14) , nil , {0,1} , "inc" , false )
 	DM.inc.icon		= FTC.UI.Texture( "FTC_MiniMeter_IncIcon" 		, DM.inc , {20,20} , {LEFT,LEFT,1,0} , nil , false )
 	DM.inc.icon:SetTexture( "/esoui/art/lfg/lfg_tank_up.dds" )
+	
+	DM.group		= FTC.UI.Label( "FTC_MiniMeter_Group"			, DM , {DM:GetWidth()-10,DM:GetHeight()} , {TOPLEFT,BOTTOMLEFT,10,0,DM.dam} , FTC.Fonts.meta(12) , nil , {0,0} , "group" , true )
 	
 	--[[----------------------------------------------------------
 		EXPANDED DAMAGE ANALYTICS

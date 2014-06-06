@@ -305,15 +305,15 @@ FTC.Buffs.Effects = {
 	-----------------------------------]]
 	
 	-- Aedric Spear
-	["Piercing Javelin"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , nil } },
-	["Aurora Javelin"]      	= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , nil } },
-	["Binding Javelin"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , nil } },
+	["Piercing Javelin"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , 0.3 } },
+	["Aurora Javelin"]      	= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , 0.3 } },
+	["Binding Javelin"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3.5 , true , 0.3 } },
 	
 	["Empowering Sweep"] 		= {	{ 1 , BUFF_EFFECT_TYPE_BUFF , 10 , false , nil } },
 	
-	["Focused Charge"] 			= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , nil } },
-	["Explosive Charge"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , nil } },
-	["Toppling Charge"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 1.5 , true , nil } },
+	["Focused Charge"] 			= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , 1 } },
+	["Explosive Charge"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 3 , true , 1 } },
+	["Toppling Charge"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 2.4 , true , 1 } },
 	
 	["Sun Shield"] 				= {	{ 1 , BUFF_EFFECT_TYPE_BUFF , 6 , false , nil } },
 	["Radiant Ward"] 			= {	{ 1 , BUFF_EFFECT_TYPE_BUFF , 6 , false , nil } },
@@ -328,11 +328,15 @@ FTC.Buffs.Effects = {
 	
 	["Eclipse"] 				= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 6 , true , nil } },
 	["Total Dark"] 				= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 13.2 , true , nil } },
-	["Unstable Core"] 			= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 6 , true , nil } },
+	["Unstable Core"] 			= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 9.8 , true , 0.5 } },
 
 	["Backlash"] 				= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 7.2 , true , 1.5 } },
 	["Power of the Light"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 7.2 , true , 1.5 } },
 	["Purifying Light"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 7.2 , true , 1.5 }, { 1 , BUFF_EFFECT_TYPE_BUFF , 8.4 , true , 1.5 } },
+	
+	["Blinding Light"] 			= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 4.8 , false , nil } },
+	["Blinding Flashes"] 		= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 8.8 , false , nil } },
+	["Searing Light"] 			= {	{ 2 , BUFF_EFFECT_TYPE_DEBUFF , 4.8 , false , nil } },
 	
 	-- Restoring Light
 	["Honor The Dead"] 			= {	{ 1 , BUFF_EFFECT_TYPE_BUFF , 8 , false , nil } },	

@@ -31,7 +31,10 @@ function IsMightGuild( ability )
 		'Scalding Rune',
 		'Equilibrium',
 		'Balance',
-		'Spell Symmetry'	
+		'Spell Symmetry',
+		'Magelight',
+		'Inner Light',
+		'Radiant Magelight'
 	}
 	
 	-- Check if it was a mage ability

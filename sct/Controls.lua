@@ -8,17 +8,20 @@
   
 function FTC.SCT:Controls()
 
+	-- Get saved width
+	local width		= FTC.vars.SCTNames and 300 or 150
+
 	-- Create outgoing damage container
 	local name		= "FTC_CombatTextOut"
 	local anchor	= FTC.vars[name]
-	local CTO 		= FTC.UI.TopLevelWindow( name , GuiRoot , {300,750} , {anchor[1],anchor[2],anchor[3],anchor[4]} , false )
+	local CTO 		= FTC.UI.TopLevelWindow( name , GuiRoot , {width,750} , {anchor[1],anchor[2],anchor[3],anchor[4]} , false )
 	CTO.backdrop 	= FTC.UI.Backdrop( name.."_Backdrop" , CTO , "inherit" , {CENTER,CENTER,0,0} , nil , nil , true )	
 	CTO.label		= FTC.UI.Label( name.."_Label" , CTO , 'inherit' , {CENTER,CENTER,0,0} , FTC.Fonts.meta(16) , nil , {1,1} , "Outgoing Damage" , true )
 	
 	-- Create incoming damage container
 	local name		= "FTC_CombatTextIn"
 	local anchor	= FTC.vars[name]
-	local CTI 		= FTC.UI.TopLevelWindow( name , GuiRoot , {150,750} , {anchor[1],anchor[2],anchor[3],anchor[4]} , false )
+	local CTI 		= FTC.UI.TopLevelWindow( name , GuiRoot , {width,750} , {anchor[1],anchor[2],anchor[3],anchor[4]} , false )
 	CTI.backdrop 	= FTC.UI.Backdrop( name.."_Backdrop" , CTI , "inherit" , {CENTER,CENTER,0,0} , nil , nil , true )	
 	CTI.label		= FTC.UI.Label( name.."_Label" , CTI , 'inherit' , {CENTER,CENTER,0,0} , FTC.Fonts.meta(16) , nil , {1,1} , "Incoming Damage" , true )
 	
